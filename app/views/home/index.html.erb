@@ -14,10 +14,10 @@
 
   <div>
     <div id="front_left_column" class="left"> 
-      <h2>Latest Comments</h2>
+      <h2><% "Latest Comments".t%></h2>
       <%= render :partial => 'comments/comment', :collection => recent_comments %>
       
-       <h2>Newest Forum Topics</h2>
+       <h2><%= "Newest Forum Topics".t %></h2>
       <%= render :partial => 'forum_topics/new_topic', :collection => recent_forum_posts %>
     </div>
 

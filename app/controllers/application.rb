@@ -101,5 +101,15 @@ class ApplicationController < ActionController::Base
     @level = []
     false
   end
+#  
+#  before_filter :set_locale
+#  def set_locale
+#    if !params[:locale].nil? && LOCALES.keys.include?(params[:locale])
+#      Locale.set LOCALES[params[:locale]]
+#    else
+#      redirect_to params.merge( 'locale' => Locale.base_language.code )
+#    end
+#  end
+
 
 end

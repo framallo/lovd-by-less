@@ -35,9 +35,12 @@ Rails::Initializer.run do |config|
   config.gem 'mocha', :version=>"0.5.6"
   config.gem 'redgreen', :version=>"1.2.2"
   config.gem 'gcnovus-avatar', :version=>"0.0.7", :lib => 'avatar'
-  
-  
-  
-  
+   
 end
+
+include Globalize
+Locale.set_base_language 'en-US'
+#LOCALES = {'en' => 'en-US', 'es' => 'es-ES'}.freeze
+
+  
 

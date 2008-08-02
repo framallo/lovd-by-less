@@ -20,3 +20,5 @@ config.action_controller.asset_host                  = "http://localhost:3000"
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :test
+require 'ruby-debug'
+

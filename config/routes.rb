@@ -32,5 +32,12 @@ ActionController::Routing::Routes.draw do |map|
     home.tos '/tos', :action => 'terms'
     home.contact '/contact', :action => 'contact'
   end
+ map.resources :localize, 
+  :member=>{:delete_icon=>:post}, :collection=>{:search=>:get}, 
+  :has_many=>[:friends, :blogs, :photos, :comments, :feed_items, :messages]
+  
+  # Install the default routes as the lowest priority.
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 
 end
