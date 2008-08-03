@@ -12,7 +12,7 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 
 # needed for Avatar::Source::RailsAssetSource
-config.action_controller.asset_host                  = "http://www.indux.com.ar:3000"
+config.action_controller.asset_host                  = "http://localhost:3000"
 
 # Disable delivery errors, bad email addresses will be ignored
 

@@ -35,9 +35,18 @@ ActionController::Routing::Routes.draw do |map|
  map.resources :localize, 
   :member=>{:delete_icon=>:post}, :collection=>{:search=>:get}, 
   :has_many=>[:friends, :blogs, :photos, :comments, :feed_items, :messages]
-  
+
+  map.with_options(:controller => 'photos') do |photos|
+    photos.show_by_tag '/show_by_tag', :action => 'show_by_tag'
+  end
+  map.with_options(:controller => 'locales') do |locales|
+    locales.set '/', :action => 'set'
+    locales.translate '/translate', :action => 'translate'
+    locales.translate_unformatted '/translate_unformatted', :action => 'translate_unformatted'
+  end  
+    
   # Install the default routes as the lowest priority.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-  map.resources :photo
+#  map.connect ':controller/:action/:id'
+#  map.connect ':controller/:action/:id.:format'
+
 end

@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   skip_filter :login_required
-  prepend_before_filter :get_profile
-  before_filter :setup
+#  prepend_before_filter :get_profile
+#  before_filter :setup, :except => :show_by_tag
   
   
   
@@ -43,6 +43,13 @@ class PhotosController < ApplicationController
         flash[:notice] = 'Photo was deleted.'
         redirect_to profile_photos_path(@p)
       end
+    end
+  end
+  
+  def show_by_tag
+    respond_to do |wants|
+      wants.html {render}
+      wants.rss {render :layout=>false}
     end
   end
   
