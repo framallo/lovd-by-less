@@ -39,14 +39,14 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options(:controller => 'photos') do |photos|
     photos.show_by_tag '/show_by_tag', :action => 'show_by_tag'
   end
-  map.with_options(:controller => 'locales') do |locales|
-    locales.set '/', :action => 'set'
-    locales.translate '/translate', :action => 'translate'
-    locales.translate_unformatted '/translate_unformatted', :action => 'translate_unformatted'
-  end  
+#  map.with_options(:controller => 'locales') do |locales|
+#    locales.set '/', :action => 'set'
+#    locales.translate '/translate', :action => 'translate'
+#    locales.translate_unformatted '/translate_unformatted', :action => 'translate_unformatted'
+#  end  
     
   # Install the default routes as the lowest priority.
-#  map.connect ':controller/:action/:id'
-#  map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 
 end

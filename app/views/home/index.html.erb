@@ -14,7 +14,7 @@
 
   <div>
     <div id="front_left_column" class="left"> 
-      <h2><% "Latest Comments".t%></h2>
+      <h2><%= "Latest Comments".t%></h2>
       <%= render :partial => 'comments/comment', :collection => recent_comments %>
       
        <h2><%= "Newest Forum Topics".t %></h2>
@@ -22,12 +22,12 @@
     </div>
 
     <div id="front_middle_column" class="left"> 
-      <h2>Newest Members</h2>
+      <h2><%="Newest Members".t %></h2>
       <%= render :partial => 'profiles/newest_member', :collection => new_members %>
     </div>
 
     <div class="front_right_column right">
-      <h2>Newest Pictures</h2>
+      <h2><%="Newest Pictures".t%></h2>
       <% newest_pictures.each do |picture|%>
       <div class="image left small_down_image">
         <div>
